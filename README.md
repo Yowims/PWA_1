@@ -10,7 +10,7 @@ Bravo, la PWA est installée.
 ## Prérequis
 
 - Image en 192x192
-- Un manifeste avec les paramètres 
+- Un manifeste (dans mon projet, "manifest.webmanifest") avec les paramètres 
 	- "short_name", 
 	- "name", 
 	- "icons" (avec la taille d'icône spécifiée au-dessus),
