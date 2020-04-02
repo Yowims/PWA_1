@@ -7,7 +7,7 @@ Connectez votre smartphone/tablette/ce que vous voulez au même réseau que celu
 Ensuite, cliquez sur le menu des options, cliquez sur "Ajouter à l'écran d'accueil", rentrez le nom de l'appli, et validez.
 Bravo, la PWA est installée.
 
-## Prérequis
+## Prérequis si vous voulez créer votre PWA
 
 - Image en 192x192
 - Un manifeste (dans mon projet, "manifest.webmanifest") avec les paramètres 
