@@ -3,12 +3,36 @@ var urlsToCache = [
   "/PWA_1/views/index.html",
 ];
 
+function testUrl(url) {
+  var request;
+  if(window.XMLHttpRequest)
+    request = new XMLHttpRequest();
+  else
+    request = new ActiveXObject("Microsoft.XMLHTTP");
+
+  urlsToCache.forEach(element => {
+    request.open('GET', element, false);
+    request.send(); // there will be a 'pause' here until the response to come.
+    // the object request will be actually modified
+    {
+      console.log("L'URL "+element+" Ne fonctionne pas.");
+      return false;
+    }
+  });
+  console.log("Toutes les URL ont fonctionné.");
+  return true;
+  
+}
+
 self.addEventListener('install', (evt) => {
   console.log('[ServiceWorker] Install');
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[ServiceWorker] Pre-caching offline page');
-      return cache.addAll(urlsToCache);
+      if(testUrl(urlsToCache) == true)
+      {
+        return cache.addAll(urlsToCache);
+      }
     })
   );
   self.skipWaiting();
