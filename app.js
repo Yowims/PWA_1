@@ -11,6 +11,10 @@ router.get("/manifest", function(req, res){
   res.sendFile(path.join(__dirname+"/manifest.webmanifest"));
 });
 
+router.get("/image", function(req, res){
+  res.sendFile(path.join(__dirname+"/public/images/transmutation-humaine-192.png"));
+});
+
 app.use('/', router);
 app.use(express.static('public'));
 app.use(express.static('views'));
