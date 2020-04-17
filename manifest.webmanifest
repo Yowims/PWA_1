@@ -4,19 +4,19 @@
   "description": "Projet de PWA réalisé par CALMES Morgane, HADJ-ARAB Ismael, LOPEZ Doryan & VELLA Cyril",
   "icons": [
     {
-      "src": "/public/images/transmutation-humaine-192.png",
+      "src": "/PWA_1/public/images/transmutation-humaine-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/public/images/transmutation-humaine-512.png",
+      "src": "/PWA_1/public/images/transmutation-humaine-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/?source=pwa",
+  "start_url": "/PWA_1?source=pwa",
   "background_color": "#000000",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/PWA_1",
   "theme_color": "#3367D6"
 }
