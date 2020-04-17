@@ -1,7 +1,8 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  'https://yowims.github.io/PWA_1/views/index.html',
-  'https://yowims.github.io/PWA_1/public/images/transmutation-humaine-192.png',
+  './views/index.html',
+  './public/images/transmutation-humaine-192.png',
+  './manifest.webmanifest',
 ];
 
 self.addEventListener('install', (evt) => {
