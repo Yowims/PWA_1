@@ -18,6 +18,6 @@ router.get("/image", function(req, res){
 app.use('/', router);
 app.use(express.static('public'));
 app.use(express.static('views'));
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Example app listening on port 3000!')
 });
