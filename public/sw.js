@@ -4,7 +4,8 @@ var urlsToCache = [
 ];
 
 function testUrl(url) {
-  var request = new XMLHttpRequest();
+  var request;
+  request = new XMLHttpRequest();
 
   urlsToCache.forEach(element => {
     request.open('GET', element, false);
@@ -27,7 +28,7 @@ self.addEventListener('install', (evt) => {
       console.log('[ServiceWorker] Pre-caching offline page');
       if(testUrl(urlsToCache) == true)
       {
-        
+        return cache.addAll(urlsToCache);
       }
     })
   );
