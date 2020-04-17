@@ -5,10 +5,7 @@ var urlsToCache = [
 
 function testUrl(url) {
   var request;
-  if(window.XMLHttpRequest)
-    request = new XMLHttpRequest();
-  else
-    request = new ActiveXObject("Microsoft.XMLHTTP");
+  request = new XMLHttpRequest;
 
   urlsToCache.forEach(element => {
     request.open('GET', element, false);
