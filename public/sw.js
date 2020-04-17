@@ -72,8 +72,6 @@ var urlsToCache = [
   'https://yowims.github.io/PWA_1/public/images/transmutation-humaine-192.png',
 ];
 
-const CACHE_NAME = "offline";
-
 async function respondTo(request) {
 	let f = fetch(request);
 	const cached = await caches.match(request);
