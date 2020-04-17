@@ -1,9 +1,7 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   './',
-  './views/index.html',
-  './public/images/transmutation-humaine-192.png',
-  './manifest.webmanifest',
+  './views/index.html'
 ];
 
 self.addEventListener('install', (evt) => {
