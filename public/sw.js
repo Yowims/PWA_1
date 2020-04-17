@@ -1,8 +1,8 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  "https://yowims.github.io/PWA_1/views/index.html",
-  "https://yowims.github.io/PWA_1/public/images/transmutation-humaine-192.png",
-  "https://yowims.github.io/PWA_1/manifest.webmanifest"
+  "./views/index.html",
+  "./public/images/transmutation-humaine-192.png",
+  "./manifest.webmanifest"
 ];
 
 self.addEventListener('install', (evt) => {
@@ -41,7 +41,7 @@ self.addEventListener('fetch', (evt) => {
 		.catch(() => {
 		  return caches.open(CACHE_NAME)
 			.then((cache) => {
-			  return cache.match('./views/index.html');
+			  return cache.match('https://yowims.github.io/PWA_1/views/index.html');
 			});
 		  })
 		);
