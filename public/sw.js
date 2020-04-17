@@ -4,63 +4,40 @@ var urlsToCache = [
   'https://yowims.github.io/PWA_1/public/images/transmutation-humaine-192.png',
 ];
 
-self.addEventListener('install', function(event) {
-    // Perform install steps
-    event.waitUntil(
-      caches.open(CACHE_NAME)
-        .then(function(cache) {
-          console.log('Cache ouvert');
-          return cache.addAll(urlsToCache);
-        })
-    );
-});
+const CACHE_NAME = "offline";
 
-self.addEventListener('activate', function(event){
-  var cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
+async function respondTo(request) {
+	let f = fetch(request);
+	const cached = await caches.match(request);
 
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
+	if (cached) { // try updating the cache first
+		try {
+			let response = await f;
+			let cache = await caches.open(CACHE_NAME);
+			cache.put(request, response.clone());
+			return response;
+		} catch (e) { // offline
+			return cached;
+		}
+	} else { // not cached, forward to network
+		return f;
+	}
 
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
+};
 
-        return fetch(event.request).then(
-          function(response) {
-            // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
+async function onFetch(e) {
+	e.respondWith(respondTo(e.request));
+}
 
-            // IMPORTANT: Clone the response. A response is a stream
-            // and because we want the browser to consume the response
-            // as well as the cache consuming the response, we need
-            // to clone it so we have two streams.
-            var responseToCache = response.clone();
+async function precache() {
+	const cache = await caches.open(CACHE_NAME);
+	return cache.addAll(urlsToCache);
+};
 
-            caches.open(CACHE_NAME)
-              .then(function(cache) {
-                cache.put(event.request, responseToCache);
-              });
+async function onInstall(e) {
+	self.skipWaiting();
+	e.waitUntil(precache());
+}
 
-            return response;
-          }
-        );
-      })
-    );
-  });
+self.addEventListener("install", onInstall);
+self.addEventListener("fetch", onFetch);
