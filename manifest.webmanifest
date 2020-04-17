@@ -14,7 +14,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://yowims.github.io/?source=pwa",
+  "start_url": "https://yowims.github.io/PWA_1/?source=pwa",
   "background_color": "#000000",
   "display": "standalone",
   "scope": "/",
