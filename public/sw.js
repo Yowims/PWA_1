@@ -1,8 +1,6 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   "/PWA_1/views/index.html",
-  "/PWA_1/images/transmutation-humaine-192.png",
-  "/PWA_1/manifest.webmanifest"
 ];
 
 self.addEventListener('install', (evt) => {
