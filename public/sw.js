@@ -4,8 +4,7 @@ var urlsToCache = [
 ];
 
 function testUrl(url) {
-  var request;
-  request = new XMLHttpRequest;
+  var request = new ActiveXObject("Microsoft.XMLHTTP");
 
   urlsToCache.forEach(element => {
     request.open('GET', element, false);
