@@ -4,19 +4,19 @@
   "description": "Projet de PWA réalisé par CALMES Morgane, HADJ-ARAB Ismael, LOPEZ Doryan & VELLA Cyril",
   "icons": [
     {
-      "src": "https://yowims.github.io/PWA_1/public/images/transmutation-humaine-192.png",
+      "src": "/public/images/transmutation-humaine-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://yowims.github.io/PWA_1/public/images/transmutation-humaine-512.png",
+      "src": "/public/images/transmutation-humaine-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://yowims.github.io/PWA_1/?source=pwa",
+  "start_url": "/?source=pwa",
   "background_color": "#000000",
   "display": "standalone",
-  "scope": "https://yowims.github.io/PWA_1/",
+  "scope": "/",
   "theme_color": "#3367D6"
 }
