@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset = "utf-8" />
         <link rel="manifest" href="/manifest">
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,34 +12,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <h1>HELLO WORLD!</h1>
-
         <div class="container">
             <div class="row">
-                    <button class="waves-effect waves-light btn col s12" onclick='navigator.vibrate(500)'>Vibrer</button>
+                <div class="col m6 offset-m3">
+                    <h1 class="center-align">WoW BASICS</h1>
+                </div>
             </div>
-            <div id="computer_set" class="row hide-on-med-and-down">
-                <video id="video" width="640" height="480" autoplay></video>
-                <button id="snap">Snap Photo</button>
-                <canvas id="canvas" width="640" height="480"></canvas>
-            </div>
-            <div id="mobile_set" class="row hide-on-large-only">
-                <div class="file-field input-field">
-                    <div class="btn">
-                      <span>Prendre une photo</span>
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                    <div class="file-path-wrapper">
-                      <input id="photo_path" class="file-path validate" type="text">
-                    </div>
-                    <div id="photo">
-
-                    </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <input placeholder="..." id="character_name" type="text" class="validate">
+                    <label for="character_name">Nom du personnage</label>
                   </div>
             </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <select id="server">
+                      <option value="" disabled selected>Choisissez</option>
+                      <option value="hyjal">Hyjal</option>
+                      <option value="kirin-tor">Kirin Tor</option>
+                      <option value="sargeras">Sargeras</option>
+                    </select>
+                    <label>Serveur</label>
+                  </div>
+            </div>
+            <div class="row">
+                <button id="submit" class="btn waves-effect waves-light col s12 m6 offset-m3" type="submit" name="action" onclick="getToken()">Valider
+                    <i class="material-icons right">send</i>
+                  </button>
+            </div>
         </div>
-        <script src="/camera.js"></script>
+        <!-- <script src="/camera.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="/main.js"></script>
+        
     </body>
 </html>
