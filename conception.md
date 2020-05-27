@@ -39,13 +39,13 @@ Voici une liste des possibles tâches utilisateur :
 
 ## Arbre des tâches
 
-![arbre](images/archi.png)
+![arbre](images/archi.PNG)
 
 ## Maquettes
 
 Et voici les maquettes de l'application :
 
-![landing](images/landing-page.png)
+![landing](images/landing_page.png)
 ![reput](images/reputations.png)
 ![achievements](images/achievements.png)
 ![sidemenu](images/sidemenu.png)
