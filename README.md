@@ -18,6 +18,6 @@ Bravo, la PWA est installée.
 	- "start_url"
 - un fichier JS contenant vos ServiceWorkers (dans mon projet, ce fichier s'appelle "sw.js" dans le dossier "public")
 
-Pour accéder à la PWA, cliquez ici : [https://yowims.github.io/PWA_1/views/index.html](https://yowims.github.io/PWA_1/views/index.html)
+Pour accéder à la PWA, cliquez ici : [https://myfirstpwa-chlv.herokuapp.com](https://myfirstpwa-chlv.herokuapp.com)
 
 # Have fun !!!
